@@ -1,21 +1,20 @@
-# Desafío 6
-## Websockets
+# Challenge 6
+##websockets
 
-### Consignas
+### Instructions
 
-1) Modificar el último entregable para que disponga de un canal de websocket que permita representar, por debajo del formulario de ingreso, una tabla con la lista de productos en tiempo real. 
+1) Modify the last deliverable so that it has a websocket channel that allows to represent, below the entry form, a table with the list of products in real time.
    
-   - Puede haber varios clientes conectados simultáneamente y en cada uno de ellos se reflejarán los cambios que se realicen en los productos sin necesidad de recargar la vista.
-   - Cuando un cliente se conecte, recibirá la lista de productos a representar en la vista.
+   - There can be several clients connected simultaneously and in each one of them the changes made in the products will be reflected without having to reload the view.
+   - When a client connects, he will receive the list of products to represent in the view.
 
-**Aspectos a incluir en el entregable:**
+**Aspects to include in the deliverable:**
 
-Para construir la tabla dinámica con los datos recibidos por websocket utilizar Handlebars en el frontend. Considerar usar archivos públicos para alojar la plantilla vacía, y obtenerla usando la función fetch( ). Recordar que fetch devuelve una promesa.
+To build the dynamic table with the data received by websocket, use Handlebars in the frontend. Consider using public files to hold the empty template, and fetch it using the fetch( ) function. Remember that fetch returns a promise.
 
-2) Añadiremos al proyecto un canal de chat entre los clientes y el servidor.
+2) We will add to the project a chat channel between the clients and the server.
 
-   - En la parte inferior del formulario de ingreso se presentará el centro de mensajes almacenados en el servidor, donde figuren los mensajes de todos los usuarios identificados por su email. 
-   - El formato a representar será: email (texto negrita en azul) [fecha y hora (DD/MM/YYYY HH:MM:SS)](texto normal en marrón) : mensaje (texto italic en verde) 
-   - Además incorporar dos elementos de entrada: uno para que el usuario ingrese su email (obligatorio para poder utilizar el chat) y otro para ingresar mensajes y enviarlos mediante un botón. 
-   - Los mensajes deben persistir en el servidor en un archivo (ver segundo entregable).
-
+   - At the bottom of the entry form, the message center stored on the server will appear, where the messages of all the users identified by their email will appear.
+   - The format to be represented will be: email (bold text in blue) [date and time (DD/MM/YYYY HH:MM:SS)] (normal text in brown) : message (italic text in green)
+   - Also incorporate two input elements: one for the user to enter their email (mandatory to be able to use the chat) and another to enter messages and send them using a button.
+   - Messages must persist on the server in a file (see second deliverable).

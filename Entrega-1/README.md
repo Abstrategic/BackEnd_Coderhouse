@@ -1,31 +1,31 @@
-# Desafío 1
-## Repaso de clases(POO) en JS
+# Challenge 1
+## Review of classes(OOP) in JS
 
-### Consignas
+### Instructions
 
-1) Declarar una clase Usuario
+1) Declare a User class
 
-2) Hacer que Usuario cuente con los siguientes atributos:
+2) Make User have the following attributes:
 
-- **nombre**: String
-- **apellido**: String
-- **libros**: Object[]
-- **mascotas**: String[]
+- **name**: String
+- **surname**: String
+- **books**: Object[]
+- **Mascotas**: String[]
 
-Los valores de los atributos se deberán cargar a través del constructor, al momento de crear las instancias
+The values of the attributes must be loaded through the constructor, when creating the instances
 
-3) Hacer que Usuario cuente con los siguientes métodos:
+3) Make User count with the following methods:
 
-- **getFullName()**: String. Retorna el nombre completo del usuario. Utilizar template strings.
-- **addMascota(String)**: void. Recibe un nombre de mascota y lo agrega al array de mascotas.
-- **countMascotas()**: Number. Reorna la cantidad de mascotas que tiene el usuario.
-- **addBook(String, String)**: void. Recibe un string 'nombre' y un string 'autor' y debe agregar un objecto: {nombre: String, autor: String} al array de libros
-- **getBookNames()**: String[]. Retorna un array con sólo los nombres del array de libros del usuario.
+- **getFullName()**: String. Returns the full name of the user. Use template strings.
+- **addPet(String)**: void. Receives a pet name and adds it to the pet array.
+- **countMascotas()**: Number. Returns the number of pets the user has.
+- **addBook(String, String)**: void. It receives a string 'name' and a string 'author' and must add an object: {name: String, author: String} to the array of books
+- **getBookNames()**: String[]. Returns an array with only the names of the user's book array.
 
-4) Crear un objecto llamado usuario con valores arbitrarios e invocar todos sus métodos.
+4) Create an object called user with arbitrary values ​​and call all its methods.
 
-### Ejemplos
+### Examples
 
-- *countMascotas*: suponiendo que el usuario tiene estas mascotas: ['perro', 'gato']. usuario.countMascotas() deberá devolver 2
-- *getBooks*: suponiendo que el usuario tiene estos libros: [{nombre: 'El señor de las moscas', autor: 'William Golding'}, {nombre: 'Fundación', autor: 'Isaac Asimov'}]. usuario.getBooks() deberá devolver: ['El señor de las Moscas', 'Fundación'].
-- *getFullName*: suponiendo que el usuario tiene nombre 'Elon' y apellido 'Musk'. usuario.getFullName() deberá devolver 'Elon Musk'.
+- *countMascotas*: Assuming the user has these pets: ['dog', 'cat']. user.countMAscotas() should return 2
+- *getBooks*: assuming the user has these books: [{name: 'Lord of the Flies', author: 'William Golding'}, {name: 'Foundation', author: 'Isaac Asimov'}]. user.getBooks() should return: ['Lord of the Flies', 'Foundation'].
+- *getFullName*: Assuming the user has a first name 'Elon' and a last name 'Musk'. user.getFullName() should return 'Elon Musk'.

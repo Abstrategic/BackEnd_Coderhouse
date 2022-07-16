@@ -1,121 +1,121 @@
-# Desafío 4
-## API RESTful
+# Challenge 4
+## RESTful API
 
-### Consignas
+### Instructions
 
-Realizar un proyecto de servidor basado en node.js y express que ofrezca una API RESTful de productos. En detalle, que incorpore las siguientes rutas:
+Make a server project based on node.js and express that offers a RESTful API of products. In detail, it incorporates the following routes:
 
-- **GET** */api/productos* -> devuelve todos los productos.
-- **GET** */api/productos/:id* -> devuelve un producto según su id.
-- **POST** */api/productos* -> recibe y agrega un producto, y lo devuelve con su id asignado.
-- **PUT** */api/productos/:id* -> recibe y actualiza un producto según su id.
-- **DELETE** */api/productos/:id* -> elimina un producto según su id.
+- **GET** */api/products* -> returns all products.
+- **GET** */api/products/:id* -> returns a product according to its id.
+- **POST** */api/products* -> receives and adds a product, and returns it with its assigned id.
+- **PUT** */api/products/:id* -> receives and updates a product according to its id.
+- **DELETE** */api/products/:id* -> deletes a product according to its id.
 
-- Cada producto estará representado por un objecto con el siguiente formato
+- Each product will be represented by an object with the following format
 
 ```json
 {
-    "title": "(nombre del producto)",
-    "price": "(precio)",
-    "thumbnail": "(url al logo o foto del producto)"
+    "title": "(product name)",
+    "price": "(price)",
+    "thumbnail": "(url to logo or product photo)"
 }
 ```
-- Cada ítem almacenado dispondrá de un id numérico proporcionado por el backend, comenzando en 1, y que se irá incrementando a medida de que se incorporen productos. Ese id será utilizado para identificar un producto que va a ser listado en forma individual.
+- Each stored item will have a numerical id provided by the backend, starting at 1, and which will increase as products are added. That id will be used to identify a product that will be listed individually.
 
-- Para el caso de que un producto no exista, se devolverá el objeto:
-{ error : 'producto no encontrado' }
+- In the event that a product does not exist, the object will be returned:
+{ error : 'product not found' }
 
-- Implementar los métodos de la API en una clase separada, utilizando para la persistencia de sus productos un contenedor de los desarrollados en clases anteriores.
+- Implement the API methods in a separate class, using a container of those developed in previous classes for the persistence of its products.
 
-- Incorporar el Router de express en la url base '/api/productos' y configurar todas las subrutas en base a este.
+- Incorporate the Express Router in the base url '/api/products' and configure all sub-routes based on it.
 
-- Crear un espacio público de servidor que contenga un documento index.html con un formulario de ingreso de productos con los datos apropiados.
+- Create a public server space that contains an index.html document with a product entry form with the appropriate data.
 
-- El servidor debe estar basado en express y debe implementar los mensajes de conexión al puerto 8080 y en caso de error, representar la descripción del mismo.
+- The server must be based on express and must implement connection messages to port 8080 and, in case of error, represent its description.
 
-- Las respuestas del servidor serán en formato JSON. La funcionalidad será probada a través de Postman y del formulario de ingreso.
+- The responses from the server will be in JSON format. The functionality will be tested through Postman and the login form.
 
-## Para probar API puedes realizar lo siguiente
+## To test API you can do the following
 
-1. Estar en el directorio de **'Entrega-4'**
+1. Be in the **'Delivery-4'** directory
 
-2. Instalar dependencias con: `npm install`
+2. Install dependencies with: `npm install`
 
-3. Iniciar el servidor con `npm run server`
+3. Start the server with `npm run server`
 
 ----
 
-### `GET | http://localhost:8080/api/productos`
+### `GET | http://localhost:8080/api/products`
 
-✅ *Respuesta:*
+✅ *Answer:*
 
 ```json
 [
     {
-        "title": "Escuadra",
+        "title": "Squad",
         "price": 75.66,
         "thumbnail": "someUrl.com",
         "id": 1
     },
     {
-        "title": "Calculadora",
+        "title": "Calculator",
         "price": 72.66,
         "thumbnail": "someUrl.com",
         "id": 2
     }
 ]
 ```
-### `GET | http://localhost:8080/api/productos/:id`
+### `GET | http://localhost:8080/api/products/:id`
 
-Para `http://localhost:8080/api/productos/3`
+For `http://localhost:8080/api/products/3`
 
-✅ *Respuesta:*
+✅ *Answer:*
 
 ```json
 {
-    "title": "Lapicera",
+    "title": "Pen",
     "price": 100,
     "thumbnail": "someUrl.com",
     "id": 3
 }
 ```
 
-Para un ID que no está presente, por ejemplo: `http://localhost:8080/api/productos/321321`
+For an ID that is not present, for example: `http://localhost:8080/api/products/321321`
 
-❌ *Respuesta:*
+❌ *Answer:*
 
 ```json
 {
-    "error": "Producto no encontrado"
+    "error": "Product not found"
 }
 ```
 
-### `POST | http://localhost:8080/api/productos`
+### `POST | http://localhost:8080/api/products`
 
 *Request:*
 
-Body en JSON (no validados)
+Body in JSON (not validated)
 
 ```json
 {
-    "title": "New Item",
+    "title": "NewItem",
     "price": 3100,
     "thumbnail": "someNewUrl.com",
 }
 ```
 
-*Respuesta:*
+*Response:*
 
-✅ `Producto agregado con el ID: 5`
+✅ `Product added with the ID: 5`
 
 
-### `PUT | http://localhost:8080/api/productos/:id`
+### `PUT | http://localhost:8080/api/products/:id`
 
-Para `http://localhost:8080/api/productos/2`
+For `http://localhost:8080/api/products/2`
 
 *Request:*
 
-Body en JSON (no validados, los 3 campos son requeridos)
+Body in JSON (not validated, the 3 fields are required)
 
 ```json
 {
@@ -126,26 +126,26 @@ Body en JSON (no validados, los 3 campos son requeridos)
 
 ```
 
-*Respuesta:*
+*Response:*
 
-✅ `El producto de ID: 2 fue actualizado`
+✅ `Product ID: 2 was updated`
 
-Para un ID que no está presente, por ejemplo: `http://localhost:8080/api/productos/321321`
+For an ID that is not present, for example: `http://localhost:8080/api/products/321321`
 
-*Respuesta:*
+*Response:*
 
-❌ `El producto no fue actualizado porque no se encontró el ID: 3123`
+❌ `The product was not updated because the ID: 3123 was not found`
 
-### `DELETE | http://localhost:8080/api/productos/:id`
+### `DELETE | http://localhost:8080/api/products/:id`
 
-Para `http://localhost:8080/api/productos/3`
+For `http://localhost:8080/api/products/3`
 
-*Respuesta:*
+*Response:*
 
-✅ `El producto de ID: 3 fue borrado`
+✅ `Product ID: 3 was deleted`
 
-Para un ID que no está presente, por ejemplo: `http://localhost:8080/api/productos/321321`
+For an ID that is not present, for example: `http://localhost:8080/api/products/321321`
 
-*Respuesta:*
+*Response:*
 
-❌ `El producto no fue borrado porque no se encontró el ID: 321321`
+❌ `The product was not deleted because the ID: 321321 was not found`

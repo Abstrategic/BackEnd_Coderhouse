@@ -1,13 +1,12 @@
-# Desafío 3
-## Servidor con Express
+# Challenge 3
+## Server with Express
 
-### Consignas
+### Instructions
 
-1) Realizar un proyecto de servidor basado en node.js que utilice el módulo express e implemente los siguientes endpoints en el puerto 8080:
-- Ruta get **'/productos'** que devuelva un array con todos los productos disponibles en el servidor
-- Ruta get **'/productoRandom'** que devuelva un producto elegido al azar entre todos los productos disponibles
+1) Make a server project based on node.js that uses the express module and implements the following endpoints on port 8080:
+- Route get **'/products'** that returns an array with all the products available on the server
+- Route get **'/productoRandom'** that returns a product chosen at random among all the available products
   
-Incluir un archivo de texto 'productos.txt' y utilizar la clase Contenedor del desafío anterior para acceder a los datos persistidos del servidor.
+Include a text file 'products.txt' and use the Wrapper class from the previous challenge to access the persisted data from the server.
 
-Antes de iniciar el servidor, colocar en el archivo 'productos.txt' tres productos como en el ejemplo del desafío anterior.
-
+Before starting the server, put in the 'products.txt' file three products as in the example of the previous challenge.

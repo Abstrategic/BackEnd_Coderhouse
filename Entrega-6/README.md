@@ -1,5 +1,5 @@
 # Challenge 6
-##websockets
+## websockets
 
 ### Instructions
 

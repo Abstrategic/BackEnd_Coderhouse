@@ -1,41 +1,41 @@
-# Desafío 7
-## Primera entrega del proyecto final
+# Challenge 7
+## First delivery of the final project
 
-### Consignas
+### Instructions
 
-Deberás entregar el estado de avance de tu aplicación eCommerce Backend, que implemente un servidor de aplicación basado en la plataforma Node.js y el middleware express. El servidor implementará dos conjuntos de rutas agrupadas en routers, uno con la url base '/productos' y el otro con '/carrito'. El puerto de escucha será el 8080 para desarrollo y process.env.PORT para producción en glitch.com
+You must deliver the progress status of your eCommerce Backend application, which implements an application server based on the Node.js platform and the express middleware. The server will implement two sets of routes bundled into routers, one with the base url '/products' and the other with '/cart'. The listening port will be 8080 for development and process.env.PORT for production on glitch.com
 
-1) El router base '/api/productos' implementará cuatro funcionalidades:
+1) The base router '/api/products' will implement four functionalities:
    
-    -GET: '/:id?' - Me permite listar todos los productos disponibles ó un producto por su id (disponible para usuarios y administradores)
-    -POST: '/' - Para incorporar productos al listado (disponible para administradores)
-    -PUT: '/:id' - Actualiza un producto por su id (disponible para administradores)
-    -DELETE: '/:id' - Borra un producto por su id (disponible para administradores)
+    -GET: '/:id?' - It allows me to list all available products or a product by its id (available for users and administrators)
+    -POST: '/' - To add products to the list (available for administrators)
+    -PUT: '/:id' - Update a product by its id (available for administrators)
+    -DELETE: '/:id' - Delete a product by its id (available for administrators)
 
-2) El router base '/api/carrito' implementará tres rutas disponibles para usuarios y administradores:
-    - POST: '/' - Crea un carrito y devuelve su id.
-    - DELETE: '/:id' - Vacía un carrito y lo elimina.
-    - GET: '/:id/productos' - Me permite listar todos los productos guardados en el carrito
-    - POST: '/:id/productos' - Para incorporar productos al carrito por su id de producto
-    - DELETE: '/:id/productos/:id_prod' - Eliminar un producto del carrito por su id de carrito y de producto
+2) The base router '/api/cart' will implement three routes available for users and administrators:
+    - POST: '/' - Creates a cart and returns its id.
+    - DELETE: '/:id' - Empty a cart and delete it.
+    - GET: '/:id/products' - Allows me to list all the products saved in the cart
+    - POST: '/:id/products' - To add products to the cart by their product id
+    - DELETE: '/:id/products/:id_prod' - Remove a product from the cart by its cart and product id
   
   
-3) Crear una variable booleana administrador, cuyo valor configuraremos más adelante con el sistema de login. Según su valor (true ó false) me permitirá alcanzar o no las rutas indicadas. En el caso de recibir un request a una ruta no permitida por el perfil, devolver un objeto de error. Ejemplo: { error : -1, descripcion: ruta 'x' método 'y' no autorizada}
+3) Create an administrator boolean variable, whose value we will configure later with the login system. Depending on its value (true or false) it will allow me to reach or not the indicated routes. In the case of receiving a request to a route not allowed by the profile, return an error object. Example: { error : -1, description: path 'x' method 'y' not authorized}
 
-4) Un producto dispondrá de los siguientes campos:  id, timestamp, nombre, descripcion, código, foto (url), precio, stock.
+4) A product will have the following fields: id, timestamp, name, description, code, photo (url), price, stock.
 
-5) El carrito de compras tendrá la siguiente estructura: 
-id, timestamp(carrito), producto: { id, timestamp(producto), nombre, descripcion, código, foto (url), precio, stock }
-6) El timestamp puede implementarse con Date.now()
-7) Comenzar a trabajar con el listado de productos y el carrito de compras en memoria del servidor, luego persistirlos en el filesystem.
+5) The shopping cart will have the following structure:
+id, timestamp(cart), product: { id, timestamp(product), name, description, code, photo (url), price, stock }
+6) The timestamp can be implemented with Date.now()
+7) Start working with the product listing and shopping cart in server memory, then persist them to the filesystem.
 
-**A tener en cuenta:**
+**To consider:**
 
-1) Para realizar la prueba de funcionalidad hay dos opciones:
-    - Probar con postman cada uno de los endpoints (productos y carrito) y su operación en conjunto.
-    - Realizar una aplicación frontend sencilla, utilizando HTML/CSS/JS ó algún framework de preferencia, que represente el listado de productos en forma de cards. En cada card figuran los datos del producto, que, en el caso de ser administradores, podremos editar su información. Para este último caso incorporar los botones actualizar y eliminar. También tendremos un formulario de ingreso de productos nuevos con los campos correspondientes y un botón enviar. Asimismo, construir la vista del carrito donde se podrán ver los productos agregados e incorporar productos a comprar por su id de producto. Esta aplicación de frontend debe enviar los requests get, post, put y delete al servidor utilizando fetch y debe estar ofrecida en su espacio público.
+1) To perform the functionality test there are two options:
+    - Test with postman each of the endpoints (products and cart) and their operation as a whole.
+    - Make a simple frontend application, using HTML/CSS/JS or any preferred framework, that represents the list of products in the form of cards. Each card contains the product data, which, in the case of being administrators, we can edit your information. For the latter case, add the update and delete buttons. We will also have a new product entry form with the corresponding fields and a submit button. Likewise, build the cart view where you can see the added products and incorporate products to buy by their product id. This frontend application must send get, post, put and delete requests to the server using fetch and must be offered in your public space.
 
-2) En todos los casos, el diálogo entre el frontend y el backend debe ser en formato JSON. El servidor no debe generar ninguna vista.
-3) En el caso de requerir una ruta no implementada en el servidor, este debe contestar un objeto de error: ej { error : -2, descripcion: ruta 'x' método 'y' no implementada}
-4) La estructura de programación será ECMAScript, separada tres en módulos básicos (router, lógica de negocio/api y persistencia ). Más adelante implementaremos el desarrollo en capas. Utilizar preferentemente clases, constructores de variables let y const y arrow function.
-5) Realizar la prueba de funcionalidad completa en el ámbito local (puerto 8080) y en glitch.com
+2) In all cases, the dialog between the frontend and the backend must be in JSON format. The server must not generate any views.
+3) In the case of requesting a route not implemented in the server, it must answer an error object: eg { error : -2, description: route 'x' method 'y' not implemented}
+4) The programming structure will be ECMAScript, separated into three basic modules (router, business logic/api and persistence). Later we will implement layered development. Preferably use classes, let and const variable constructors and arrow function.
+5) Perform full functionality test at local scope (port 8080) and at glitch.com

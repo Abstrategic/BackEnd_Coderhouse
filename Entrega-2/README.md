@@ -1,40 +1,40 @@
-# Desafío 2
-## Manejo de archivos asincrónicamente con Node
+# Challenge 2
+## Handle files asynchronously with Node
 
-### Consignas
+### Instructions
 
-1)  Implementar programa que contenga una clase llamada Contenedor que reciba el nombre del archivo con el que va a trabajar e implemente los siguientes métodos:
+1) Implement a program that contains a class called Container that receives the name of the file with which it is going to work and implements the following methods:
    
-- **save(Object)**: Number - Recibe un objeto, lo guarda en el archivo, devuelve el id asignado.
-- **getById(Number)**: Object - Recibe un id y devuelve el objeto con ese id, o null si no está.
-- **getAll()**: Object[] - Devuelve un array con los objetos presentes en el archivo.
-- **deleteById(Number)**: void - Elimina del archivo el objeto con el id buscado.
-- **deleteAll()**: void - Elimina todos los objetos presentes en el archivo.
+- **save(Object)**: Number - Receives an object, saves it to the file, returns the assigned id.
+- **getById(Number)**: Object - Receives an id and returns the object with that id, or null if it is not present.
+- **getAll()**: Object[] - Returns an array with the objects present in the file.
+- **deleteById(Number)**: void - Deletes the object with the searched id from the file.
+- **deleteAll()**: void - Deletes all objects present in the file.
 
-2) **Aspectos a incluir en el entregable:** 
+2) **Aspects to include in the deliverable:**
    
-- El método save incorporará al producto un id numérico, que deberá ser siempre uno más que el id del último objeto agregado (o id 1 si es el primer objeto que se agrega) y no puede estar repetido.
+- The save method will add a numeric id to the product, which must always be one more than the id of the last object added (or id 1 if it is the first object added) and cannot be repeated.
 
-- Tomar en consideración el contenido previo del archivo, en caso de utilizar uno existente.
+- Take into consideration the previous content of the file, in case of using an existing one.
 
-- Implementar el manejo de archivos con el módulo fs de node.js, utilizando promesas con async/await y manejo de errores.
+- Implement file handling with the node.js fs module, using promises with async/await and error handling.
 
-- Probar el módulo creando un contenedor de productos, que se guarde en el archivo: “productos.txt”
+- Test the module by creating a product container, which is saved in the file: "products.txt"
 
-- Incluir un llamado de prueba a cada método, y mostrando por pantalla según corresponda para verificar el correcto funcionamiento del módulo construído. 
+- Include a test call to each method, and showing it on the screen as appropriate to verify the correct functioning of the built module.
 
-- El formato de cada producto será :
+- The format of each product will be:
 
 ```json
 {
-    "title": "(nombre del producto)",
-    "price": "(precio)",
-    "thumbnail": "(url de la foto del producto)"
+    "title": "(product name)",
+    "price": "(price)",
+    "thumbnail": "(product photo url)"
 }
 ```
-### Ejemplo
+### Example
 
-Contenido de "productos.txt" con 3 productos almacenados 
+Content of "products.txt" with 3 stored products
 
 ```json
 [                                                                                                                                                     

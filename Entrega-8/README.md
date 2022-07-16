@@ -1,44 +1,44 @@
-# Desafío 8
-## Nuestra primera base de datos
+# Challenge 8
+## Our first database
 
-### Consignas
+### Instructions
 
-- Tomando como base las clases Contenedor en memoria y en archivos, desarrollar un nuevo contenedor con idénticos métodos pero que funcione sobre bases de datos, utilizando Knex para la conexión. Esta clase debe recibir en su constructor el objeto de configuración de Knex y el nombre de la tabla sobre la cual trabajará. Luego, modificar el desafío entregable de la clase 6, y
+- Based on the Container classes in memory and in files, develop a new container with identical methods but that works on databases, using Knex for the connection. This class must receive in its constructor the Knex configuration object and the name of the table on which it will work. Then modify the challenge deliverable from class 6, and
 
-    - cambiar la persistencia de los mensajes de filesystem a base de datos SQLite3.
-    - cambiar la persistencia de los productos de memoria a base de datos MariaDB.
+    - change persistence of filesystem messages to SQLite3 database.
+    - change persistence of memory products to MariaDB database.
 
-- Desarrollar también un script que utilizando knex cree las tablas necesarias para la persistencia en cuestión (tabla mensajes en sqlite3 y tabla productos en mariaDb).
+- Also develop a script that, using knex, creates the necessary tables for the persistence in question (messages table in sqlite3 and products table in mariaDb).
 
-*Notas:*
-Definir una carpeta DB para almacenar la base datos SQLite3 llamada ecommerce
+*Grades:*
+Define a DB folder to store the SQLite3 database called ecommerce
 
-## Resolución
+## Resolution
 
-Se plantea el siguiente esquema para que cada Carrito pueda tener productos, solo si el carrito y el producto existen. Además, si se borra un producto o un carrito se borra en cascada en la tabla de relaciones.
+The following scheme is proposed so that each Cart can have products, only if the cart and the product exist. Also, if a product or a cart is deleted, it is cascaded in the relationship table.
 
-![Diagrama básico tablas](https://raw.githubusercontent.com/EstebanDem/backend-coderhouse/master/Entrega-8/currentSchema.png)
+![Basic table diagram](https://raw.githubusercontent.com/Abstrategic/BackEnd_Coderhouse/blob/main/Entrega-8/currentSchema.png)
 
-### Crear Tablas y rows vía script
+### Create Tables and rows via script
 
-Con SQLite y/o MySQL configurados, solo se debe lanzar el siguiente comando por terminal y las tablas se crearán y rellenarán automáticamente.
+With SQLite and/or MySQL configured, just run the following command via terminal and the tables will be created and populated automatically.
 
 ```console
-.../Entrega-8 $ npm run rebuildDB
+.../delivery-8 $ npm run rebuildDB
 
-    > entrega-8@1.0.0 rebuildDB
+    > release-8@1.0.0 rebuildDB
     > node ./src/dao/start/RebuildDB.js
 
-    🟢 La tabla <producto> ha sido creada
-    🟢 La tabla <carrito> ha sido creada
-    🟢 La tabla <productoCarrito> ha sido creada
-    🧪 Se agregaron Productos a la tabla
-    🛒 Se agregaron Carritos a la tabla
-    🛒<->🧪 Se agregaron relaciones a la tabla
+    🟢 The table <product> has been created
+    🟢 Table <cart> has been created
+    🟢 The table <productCart> has been created
+    🧪 Products were added to the table
+    🛒 Carts were added to the table
+    🛒<->🧪 Relationships were added to the table
 
 ```
 
-### Ejemplo de las rows de cada tabla
+### Example of the rows of each table
 
 ```console
 SELECT * FROM producto;
@@ -73,6 +73,6 @@ SELECT * FROM productoCarrito;
 | 10 | 7         | 3          |
 +----+-----------+------------+
 
-El carrito de id (7) tiene dentro producto 1, 2 y 3
+The cart of id (7) has product 1, 2 and 3 inside
 
 ```

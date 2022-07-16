@@ -17,7 +17,7 @@ Define a DB folder to store the SQLite3 database called ecommerce
 
 The following scheme is proposed so that each Cart can have products, only if the cart and the product exist. Also, if a product or a cart is deleted, it is cascaded in the relationship table.
 
-![Basic table diagram](https://raw.githubusercontent.com/Abstrategic/BackEnd_Coderhouse/blob/main/Entrega-8/currentSchema.png)
+![Basic table diagram][(https://raw.githubusercontent.com/Abstrategic/BackEnd_Coderhouse/blob/main/Entrega-8/currentSchema.png)](https://github.com/Abstrategic/BackEnd_Coderhouse/blob/main/Entrega-8/currentSchema.png)
 
 ### Create Tables and rows via script
 

@@ -1,21 +1,29 @@
-# Desafío 6
-## Websockets
+# Challenge 5
+## Template Engines
 
-### Consignas
+### Instructions
 
-1) Modificar el último entregable para que disponga de un canal de websocket que permita representar, por debajo del formulario de ingreso, una tabla con la lista de productos en tiempo real. 
+
+1) Using the same product API of the deliverable project of the previous class, build a web server (not REST) ​​that incorporates:
+
+   - A product upload form in the root path (set the '/products' path to receive the POST, and redirect to the same form).
+
+   - A view of the products loaded (using handlebar templates) in the GET route '/products'.
+
+   - Both pages will have a button that redirects to the other.
+
+2) Keeping the same functionality replace the handlebars templating engine with **pug**.
    
-   - Puede haber varios clientes conectados simultáneamente y en cada uno de ellos se reflejarán los cambios que se realicen en los productos sin necesidad de recargar la vista.
-   - Cuando un cliente se conecte, recibirá la lista de productos a representar en la vista.
+3) Keeping the same functionality replace the template engine handlebars with **ejs**.
 
-**Aspectos a incluir en el entregable:**
+4) In writing, indicate which of the three template engines you prefer for your project and why.
 
-Para construir la tabla dinámica con los datos recibidos por websocket utilizar Handlebars en el frontend. Considerar usar archivos públicos para alojar la plantilla vacía, y obtenerla usando la función fetch( ). Recordar que fetch devuelve una promesa.
+#### Aspects to include in the deliverable:
 
-2) Añadiremos al proyecto un canal de chat entre los clientes y el servidor.
+- Make the corresponding templates that allow you to go through the array of products and represent it in the form of a dynamic table, with the headers being the name of the product, the price and its photo (the photo will be shown as an image in the table)
 
-   - En la parte inferior del formulario de ingreso se presentará el centro de mensajes almacenados en el servidor, donde figuren los mensajes de todos los usuarios identificados por su email. 
-   - El formato a representar será: email (texto negrita en azul) [fecha y hora (DD/MM/YYYY HH:MM:SS)](texto normal en marrón) : mensaje (texto italic en verde) 
-   - Además incorporar dos elementos de entrada: uno para que el usuario ingrese su email (obligatorio para poder utilizar el chat) y otro para ingresar mensajes y enviarlos mediante un botón. 
-   - Los mensajes deben persistir en el servidor en un archivo (ver segundo entregable).
+- If no data is found, display the message: 'There are no products'.
 
+#### Suggestions:
+
+- Use iconfinder (https://www.iconfinder.com/free_icons) to get the url of the product images (right click on the image -> copy image address)

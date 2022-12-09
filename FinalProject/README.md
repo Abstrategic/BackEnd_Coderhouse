@@ -1,37 +1,37 @@
-# Entrega Final
+# Final Delivery
 
-Esta entrega incluye lo realizado en las anteriores, para ver los detalles se pueden ver en cada README.
+This installment includes what was done in the previous ones, to see the details you can see each README.
 
-## Login, Logout y SignUp de usuario
+## Login, Logout y SignUp of User
 
 ### Home
 
-En `/api/usuario`
+In `/api/usuario`
 
-- ✅ Si el usuario se encuentra loggeado:
+- ✅ If the user is logged in:
 
-<img src="../Entrega-25/imagesReadme/homeLogged.png" alt="Home with logged user"/>
+<img src="../FinalProject/imagesReadme/homeLogged.png" alt="Home with logged user"/>
 
-- ❌ Si el usuario **no** se encuentra loggeado:
+- ❌ If the user is **not** logged in:
 
-<img src="../Entrega-25/imagesReadme/homeNotLogged.png" alt="Home with unlogged user"/>
+<img src="../FinalProject/imagesReadme/homeNotLogged.png" alt="Home with unlogged user"/>
 
 ### Sign Up
 
 En `/api/usuario/signup`
 
-<img src="../Entrega-25/imagesReadme/signUpView.png" alt="Sign up view"/>
+<img src="../FinalProject/imagesReadme/signUpView.png" alt="Sign up view"/>
 
-💡 Si se tiene configurada la cuenta de gmail y quitando el comentario de `user.controller.js:28` se recibirá un correo electrónico de que se ha creado un nuevo usuario.
+💡 If you have configured the gmail account and removing the comment from `user.controller.js:28` you will receive an email that a new user has been created.
 
 ### Log in
 
-En `/api/usuario/login`
+In `/api/usuario/login`
 
-<img src="../Entrega-25/imagesReadme/loginView.png" alt="Login view"/>
+<img src="../FinalProject/imagesReadme/loginView.png" alt="Login view"/>
 
 ### Log out
 
-En `/api/usuario/logout`
+In `/api/usuario/logout`
 
-<img src="../Entrega-25/imagesReadme/logoutView.png" alt="Logout view"/>
+<img src="../FinalProject/imagesReadme/logoutView.png" alt="Logout view"/>

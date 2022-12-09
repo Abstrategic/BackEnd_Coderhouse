@@ -1,49 +1,49 @@
-# Desafío 16
+# Challenge 16
 
-## Loggers, Gzip y análisis de performance.
+## Loggers, Gzip and performance analysis.
 
-### Consignas
+### Intructions
 
-Incorporar al proyecto de servidor de trabajo la compresión gzip.
+Incorporate gzip compression into the work server project.
 
-Verificar sobre la ruta /info con y sin compresión, la diferencia de cantidad de bytes devueltos en un caso y otro.
+Check the /info route with and without compression, the difference in the number of bytes returned in one case and another.
 
-Luego implementar loggueo (con alguna librería vista en clase) que registre lo siguiente:
+Then implement logging (with some class view library) that records the following:
 
-   - Ruta y método de todas las peticiones recibidas por el servidor (info)
-   - Ruta y método de las peticiones a rutas inexistentes en el servidor (warning)
+    - Route and method of all requests received by the server (info)
+    - Route and method of requests to routes that do not exist on the server (warning)
 
-Errores lanzados por las apis de mensajes y productos, únicamente (error)
-Considerar el siguiente criterio:
-  - Loggear todos los niveles a consola (info, warning y error)
-  - Registrar sólo los logs de warning a un archivo llamada warn.log
-  - Enviar sólo los logs de error a un archivo llamada error.log
-
-----
-
-Luego, realizar el análisis completo de performance del servidor con el que venimos trabajando.
-
-Vamos a trabajar sobre la ruta '/info', en modo fork, agregando ó extrayendo un console.log de la información colectada antes de devolverla al cliente. Además desactivaremos el child_process de la ruta '/randoms'
-
-Para ambas condiciones (con o sin console.log) en la ruta '/info' OBTENER:
-
-  - El perfilamiento del servidor, realizando el test con --prof de node.js. Analizar los resultados obtenidos luego de procesarlos con --prof-process. 
-  - Utilizaremos como test de carga Artillery en línea de comandos, emulando 50 conexiones concurrentes con 20 request por cada una. Extraer un reporte con los resultados en archivo de texto.
+Errors thrown by the message and product apis, only (error)
+Consider the following criteria:
+   - Log all levels to console (info, warning and error)
+   - Log only warning logs to a file called warn.log
+   - Send only the error logs to a file called error.log
 
 ----
 
-Luego utilizaremos Autocannon en línea de comandos, emulando 100 conexiones concurrentes realizadas en un tiempo de 20 segundos. Extraer un reporte con los resultados (puede ser un print screen de la consola)
+Then, carry out the complete performance analysis of the server with which we have been working.
 
-  - El perfilamiento del servidor con el modo inspector de node.js --inspect. Revisar el tiempo de los procesos menos performantes sobre el archivo fuente de inspección.
-  - El diagrama de flama con 0x, emulando la carga con Autocannon con los mismos parámetros anteriores.
+We are going to work on the '/info' route, in fork mode, adding or extracting a console.log of the collected information before returning it to the client. We will also disable the child_process of the route '/randoms'
+
+For both conditions (with or without console.log) in path '/info' GET:
+
+   - The profiling of the server, carrying out the test with --prof of node.js. Parse the results obtained after processing them with --prof-process.
+   - We will use Artillery as a load test in the command line, emulating 50 concurrent connections with 20 requests for each one. Extract a report with        the results in a text file.
+
+----
+
+Then we will use Autocannon on the command line, emulating 100 concurrent connections made in a time of 20 seconds. Extract a report with the results (it can be a print screen of the console)
+
+   - Profiling the server with node.js inspector mode --inspect. Review the time of the less performing processes on the inspection source file.
+   - The flame diagram with 0x, emulating the charge with Autocannon with the same previous parameters.
   
-Realizar un informe en formato pdf sobre las pruebas realizadas incluyendo los resultados de todos los test (texto e imágenes). 
+Prepare a report in pdf format on the tests carried out, including the results of all the tests (text and images).
 
-👉 Al final incluir la conclusión obtenida a partir del análisis de los datos.
+👉 At the end include the conclusion obtained from the analysis of the data.
 
-### Conclusión
+### Conclusion
 
-Sin console log
+Without console log
 
 ```console
 
@@ -73,7 +73,7 @@ Req/Bytes counts sampled once per second.
 
 ```
 
-El resultado de Artillery nos indica (ver archivo para resultados completos)
+The Artillery result shows (see file for full results)
 
 ```console
 
@@ -86,7 +86,7 @@ http.response_time:
 
 ```
 
-Benchmark con console Log
+Benchmark with console Log
 
 ```console
 
@@ -116,7 +116,7 @@ Req/Bytes counts sampled once per second.
 
 ```
 
-El resultado de Artillery nos indica (ver archivo para resultados completos)
+The Artillery result shows (see file for full results)
 
 ```console
 
@@ -128,8 +128,7 @@ http.response_time:
   p99: ......................................................................... 376.2 👈
   
 ```
-
-👈Todas las pruebas realizadas nos indican que en el caso que logueamos por consola la respuesta antes de ser enviada el tiempo de respuesta es mayor y que en el mismo tiempo, se pueden manejar menos requests. 
+👈All the tests carried out indicate that in the case that we log in through the console, the response time before being sent is longer and that fewer requests can be handled at the same time.
 
 
 
